@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- 
+            urls.css
+                .map(function(url) {
+                    return '<link rel="stylesheet" type="text/css" href="' + url + '">';
+                })
+                .join("\n");
+        %>
+    </head>
+    <body>
+        <%- 
+            urls.js
+                .map(function(url) {
+                    return '<script type="text/javascript" src="' + url + '"></script>';
+                })
+                .join("\n");
+        %>
+    </body>
+</html>

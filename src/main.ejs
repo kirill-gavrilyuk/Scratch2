@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <%-
+            urls.css
+                .map(function(url) {
+                    return '<link rel="stylesheet" type="text/css" href="' + url + '">';
+                })
+                .join("\n");
+        %>
+    </head>
+    <body>
+        <div id="fst" style="height: 50vh" ></div>
+        <div id="snd" style="height: 50vh" ></div>
+        <%-
+            urls.js
+                .map(function(url) {
+                    return '<script type="text/javascript" src="' + url + '"></script>';
+                })
+                .join("\n");
+        %>
+    </body>
+</html>

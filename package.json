@@ -1,0 +1,27 @@
+{
+  "name": "Scratch2",
+  "version": "0.0.9-babel.6",
+  "description": "REPL chrome extension with extra features",
+  "scripts": {
+    "dev": "export NODE_ENV=development && webpack",
+    "prod": "export NODE_ENV=production && webpack",
+    "build": "npm run dev && npm run prod"
+  },
+  "author": "Kirill Gavrilyuk kirill.gavrilyuk.work@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/standalone": "7.0.0-beta.44",
+    "brace": "0.11.1",
+    "webpack": "3.10.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.4",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "ejs": "2.5.8",
+    "file-loader": "1.1.11",
+    "webpack": "3.10.0"
+  }
+}
