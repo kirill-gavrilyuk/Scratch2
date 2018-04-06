@@ -3,18 +3,11 @@ import * as Transformer     from "transformer.js";
 import * as Cont            from "cont.js";
 import * as InspectedWindow from "inspected-window.js";
 import * as Storage         from "storage.js";
-
-
-const Controls = {
-    handleEvents: handler => cb => {
-        document.querySelector("#run").onclick = () => cb(handler["run"]);
-        document.querySelector("#clr").onclick = () => cb(handler["clear"]);
-
-    }
-}
+import * as Controls        from "controls.js";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Creates editor with default configuration
 const createConfiguredEditor = nodeId => do Cont.bind {
     editor <- Editor.createEditor(nodeId);
     editor.setProgrammingLanguage("javascript");
@@ -45,7 +38,7 @@ const main = do Cont.bind {
     transformed <- Transformer.transform(content);
     sndEditor.setContent(transformed);
 
-    // Handle interface actions
+    // Handle interface actions. Get next action and attach it
     nextAction <- Controls.handleEvents({
         run: InspectedWindow.evaluate(transformed),
         clear: fstEditor.setContent("")
