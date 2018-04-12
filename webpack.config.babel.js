@@ -15,7 +15,7 @@ var config = {
         filename: "[name].js"
     },
     resolve: {
-        modules: ["node_modules", __dirname + "/src"],
+        modules: ["node_modules", __dirname + "/src/app", __dirname + "/src" ],
     },
     module: {
         loaders: [
