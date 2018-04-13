@@ -7,6 +7,7 @@ export const configure = editorLens => (cb, world) => {
     const editor = Utils.Lenz.get(editorLens, world);
 
     const configure = do Utils.Monad.Cont.bind {
+        Api.Editor.setBlockScrolling(editor, Infinity);
         Api.Editor.setProgrammingLanguage(editor, "javascript");
         Api.Editor.setTheme(editor, "github");
         Api.Editor.setKeyboardMode(editor, "vim");
@@ -29,3 +30,5 @@ export const getContent = editorLens => (cb, world) => {
     Api.Editor.getContent(editor, world)(val => cb(val, world));
     return null;
 };
+
+

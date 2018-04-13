@@ -19,7 +19,6 @@ const main = do Utils.Monad.ContST.bind {
     Actions.Editor.setContent(World.Lens.secondaryEditor, transformed);
 
     loop = do Utils.Monad.ContST.bind {
-        Actions.Log.log("loop");
         Actions.UI.render;
         nextAction <- Actions.Queue.consume;
         nextAction;

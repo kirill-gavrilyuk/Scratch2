@@ -45,3 +45,10 @@ export const getContent = editor => cb => {
     return null;
 };
 
+export const setBlockScrolling = (editor, value) => cb => {
+    editor.$blockScrolling = value;
+    cb(null);
+    return null;
+};
+
+
