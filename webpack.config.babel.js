@@ -25,9 +25,9 @@ var config = {
                 loader: "babel-loader",
                 query: {
 //                  presets: [ "es2015", "stage-0", "react" ],
-                    plugins: [ __dirname + "/webpack/monadic/plugin.js" ],
+                    plugins: [ "monadic.js/dist/plugin.js" ],
                     parserOpts: {
-                        parser: __dirname + "/webpack/monadic/parser.js"
+                        parser: "monadic.js/dist/parser.js"
                     }
                 }
             }
