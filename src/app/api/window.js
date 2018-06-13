@@ -19,7 +19,9 @@ const _eval = fromMaybe(do bind {
 }, evalWrapper);
 
 export const evaluate = code => cb => _eval(code, {}, (res, err) => {
-    if (err.isException)
+    const isException = fromMaybe(pick("isException", err), false);
+
+    if (isException)
        return _eval(`console.error("${err.value.replace(/\n|\r/g, "\\n")}")`, {}, () => cb(null));
 
     return cb(res);

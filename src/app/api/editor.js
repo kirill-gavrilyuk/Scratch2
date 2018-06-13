@@ -50,5 +50,3 @@ export const setBlockScrolling = (editor, value) => cb => {
     cb(null);
     return null;
 };
-
-
